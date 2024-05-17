@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools", "build"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mavic-helper"
+authors = [
+  {name = "Michael Rahnis", email = "mike@topomatrix.com"},
+]
+description = "Convert DJI thermal camera images to TIFF"
+dynamic = ["version"]
+readme = "README.rst"
+license = {file = "LICENSE.txt"}
+keywords = ["click", "cli", "thermal", "radiometric", "rjpeg", "drone"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: BSD License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3"
+]
+
+requires-python = ">=3.9"
+
+dependencies = [
+  "numpy",
+  "click",
+  "click-plugins",
+  "matplotlib",
+  "pillow",
+  "defusedxml",
+  "requests",
+  "dji-thermal-sdk"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-cov",
+    "mypy",
+    "ruff",
+]
+dev = [
+    "numpydoc",
+    "twine",
+]
+
+[project.urls]
+Homepage = "https://topomatrix.com"
+Documentation = "https://readthedocs.org"
+Repository = "https://github.com/mrahnis/mavic-helper/mavic-helper.git"
+Changelog = "https://github.com/mrahnis/mavic-helper/blob/main/CHANGELOG.md"
+
+[project.scripts]
+mav = "mavic_helper.cli.mav:cli"
+
+[project.entry-points."mavic_helper.mav_commands"]
+positions = "mavic_helper.cli.positions:positions"
+remask = "mavic_helper.cli.remask:remask"
+totiff = "mavic_helper.cli.totiff:totiff"
+trend = "mavic_helper.cli.trend:trend"
+
+[tool.setuptools.packages.find]
+where = [""]
+exclude = ["vendor"]
+
+[tool.setuptools.package-data]
+mavic_helper = ["dji_sdk/*.dll", "dji_sdk/*.ini"]
+
+[tool.setuptools.dynamic]
+version = {attr = "mavic_helper.__version__"}
+
+[tool.mypy]
+python_version = "3.9"
+files = ["mavic_helper"]
+show_error_codes = true
+pretty = true
+strict = true
+local_partial_types = true
+warn_unreachable = true
