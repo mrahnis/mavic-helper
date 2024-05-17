@@ -11,9 +11,8 @@ Installation
 
 .. code:: console
 
-cd ~/mavic-helper
-
-python -pip install .
+	cd ~/mavic-helper
+	python -pip install .
 
 
 Examples
