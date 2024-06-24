@@ -27,8 +27,8 @@ mav positions
 
 Takes a set of images and creates a GeoJSON file of camera positions from the image metadata.
 
-mav remask
-----------
+mav tidytiff
+------------
 
 Takes the band mask (Band 2) from a Metashape thermal orthomosaic and converts it to nodata values in a single-band TIFF.
 

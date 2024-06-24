@@ -55,7 +55,7 @@ mav = "mavic_helper.cli.mav:cli"
 
 [project.entry-points."mavic_helper.mav_commands"]
 positions = "mavic_helper.cli.positions:positions"
-remask = "mavic_helper.cli.remask:remask"
+remask = "mavic_helper.cli.tidytiff:tidytiff"
 totiff = "mavic_helper.cli.totiff:totiff"
 trend = "mavic_helper.cli.trend:trend"
 

@@ -13,7 +13,7 @@ from mavic_helper import __version__ as plugin_version
 @click.option('-v', '--verbose', default=False, is_flag=True, help="Enables verbose mode")
 @click.version_option(version=plugin_version, message='v%(version)s')
 @click.pass_context
-def remask(ctx, image, output, verbose):
+def tidytiff(ctx, image, output, verbose):
     '''Transfer band mask to nodata values
 
     Thermal orthomosaics may contain a mask in Band 2. This command transfers the mask to Band 1 as nodata values. 
