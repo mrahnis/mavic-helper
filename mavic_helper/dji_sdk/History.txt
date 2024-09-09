@@ -1,3 +1,8 @@
+v1.5 (20240418)
+    Fix some memoryleak bug.
+    Support M3TD/H30T product.
+    Optimize performance.
+
 v1.4 (20220628)
     update libv_iirp/libv_girp for repairing some bug for DTAT3.0.
     Released to DTAT3.0
