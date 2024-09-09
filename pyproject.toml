@@ -43,6 +43,9 @@ dev = [
     "numpydoc",
     "twine",
 ]
+docs = [
+    "jupyter"
+]
 
 [project.urls]
 Homepage = "https://topomatrix.com"
