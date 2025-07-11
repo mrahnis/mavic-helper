@@ -37,15 +37,18 @@ schema = {
 @click.version_option(version=plugin_version, message='v%(version)s')
 @click.pass_context
 def positions(ctx, src, output, verbose):
+    '''Writes a GeoJSON containing positions and file metadata from a directory of DJI RJPEGs
 
+    Example:
+
+    mav positions ./example-dir photo-points.json
+    '''
     logger = logging.getLogger()
 
     if verbose:
         logger.setLevel(logging.INFO)
     else:
         logger.setLevel(logging.ERROR)
-
-
 
 
     infiles = glob.glob(src+'/*_T.JPG')

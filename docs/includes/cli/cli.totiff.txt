@@ -1,0 +1,19 @@
+Usage: mav totiff [OPTIONS] RJPEG OUTPUT
+
+  Convert Mavic RJPEG to TIFF containing temperature values.
+
+
+
+Options:
+  --distance FLOAT                Object distance
+  --emissivity FLOAT              Object emissivity
+  --temperature FLOAT             Ambient temperature
+  --humidity FLOAT                Relative humidity
+  --altitude [hagl|relative|existing]
+                                  Calculate HAGL from USGS Elevation API, else
+                                  use DJI relative altitude for Object
+                                  Distance
+  --dtype [float32|int16|uint16]  Image data type
+  -v, --verbose                   Enables verbose mode
+  --version                       Show the version and exit.
+  --help                          Show this message and exit.

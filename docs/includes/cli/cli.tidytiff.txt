@@ -1,0 +1,15 @@
+Usage: mav tidytiff [OPTIONS] IMAGE OUTPUT
+
+  Transfer band mask to nodata values
+
+  Thermal orthomosaics may contain a mask in Band 2. This command transfers
+  the mask to Band 1 as nodata values.
+
+Options:
+  -n, --nodata TEXT               Specify a nodata value; the default is
+                                  minimum value float32.
+  -c, --compress [lzw|deflate|zstd]
+                                  Choice of compression method.
+  -v, --verbose                   Enables verbose mode
+  --version                       Show the version and exit.
+  --help                          Show this message and exit.

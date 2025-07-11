@@ -32,17 +32,17 @@ def tidytiff(ctx, image, output, nodata, compress, verbose):
 
         # determine nodata
         if nodata is None:
-            if dtype is 'float32':
+            if dtype == 'float32':
                 nodata = np.finfo(np.float32).min
-            elif dtype is 'int16':
+            elif dtype == 'int16':
                 nodata = np.finfo(np.int16).min
         else:
             pass
 
         # determine compression predictor
-        if dtype is 'float32':
+        if dtype == 'float32':
             predictor = 3
-        elif dtype is 'int16':
+        elif dtype == 'int16':
             predictor = 2
         else:
             predictor = 1

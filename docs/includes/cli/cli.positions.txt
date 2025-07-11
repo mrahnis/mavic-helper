@@ -1,0 +1,13 @@
+Usage: mav positions [OPTIONS] SRC OUTPUT
+
+  Writes a GeoJSON containing positions and file metadata from a directory of
+  DJI RJPEGs
+
+  Example:
+
+  mav positions ./example-dir photo-points.json
+
+Options:
+  -v, --verbose  Enables verbose mode
+  --version      Show the version and exit.
+  --help         Show this message and exit.

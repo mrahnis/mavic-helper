@@ -19,7 +19,7 @@ classifiers = [
   "Programming Language :: Python :: 3"
 ]
 
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 
 dependencies = [
   "numpy",
@@ -29,22 +29,35 @@ dependencies = [
   "pillow",
   "defusedxml",
   "requests",
-  "dji-thermal-sdk"
+  "dji-thermal-sdk",
+  "fiona",
+  "shapely",
+  "pyproj",
+  "rasterio",
+  "pandas"
 ]
 
 [project.optional-dependencies]
+dev = [
+    "setuptools",
+    "numpydoc",
+    "twine",
+    "watchfiles"
+]
+docs = [
+    "jupyter",
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocstrings",
+    "mkdocstrings-python",
+    "mkdocs-autoapi",
+    "pymdown-extensions"
+]
 test = [
     "pytest",
     "pytest-cov",
     "mypy",
     "ruff",
-]
-dev = [
-    "numpydoc",
-    "twine",
-]
-docs = [
-    "jupyter"
 ]
 
 [project.urls]
@@ -64,7 +77,6 @@ trend = "mavic_helper.cli.trend:trend"
 
 [tool.setuptools.packages.find]
 where = [""]
-exclude = ["vendor"]
 
 [tool.setuptools.package-data]
 mavic_helper = ["dji_sdk/*.dll", "dji_sdk/*.ini"]
@@ -80,3 +92,18 @@ pretty = true
 strict = true
 local_partial_types = true
 warn_unreachable = true
+
+[tool.pixi.project]
+channels = ["conda-forge"]
+platforms = ["win-64"]
+
+[tool.pixi.pypi-dependencies]
+mavic-helper = { path = ".", editable = true }
+
+[tool.pixi.environments]
+default = {features = [], solve-group = "default"}
+dev = {features = ["dev"], solve-group = "default"}
+docs = {features = ["docs"], solve-group = "dev"}
+test = {features = ["test"], solve-group = "dev"}
+
+[tool.pixi.tasks]

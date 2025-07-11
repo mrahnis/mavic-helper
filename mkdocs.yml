@@ -1,0 +1,15 @@
+site_name: Mavic Helper
+site_url: https://topomatrix.com/mavic-helper
+theme:
+  name: material
+  icon:
+    repo: fontawesome/brands/github
+nav:
+  - index.md
+  - cli.md
+repo_url: https://github.com/mrahnis/mavic-helper
+plugins:
+  - search
+  - mkdocstrings
+markdown_extensions:
+  - pymdownx.snippets
